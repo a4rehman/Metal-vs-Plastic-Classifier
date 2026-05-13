@@ -22,7 +22,7 @@ EcoDetect is a high-performance deep learning application designed to classify w
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Metal-Plastic_detection.git
+   git clone https://github.com/a4rehman/Metal-vs-Plastic-Classifier.git
    cd Metal-Plastic_detection
    ```
 
