@@ -1,0 +1,29 @@
+data:
+  base_dir: "data"
+  image_size: [224, 224]
+  batch_size: 32
+  validation_split: 0.2
+  random_seed: 42
+
+model:
+  conv_layers:
+    - filters: 32
+      kernel_size: 3
+    - filters: 64
+      kernel_size: 3
+    - filters: 128
+      kernel_size: 3
+  activation: "relu"
+  dense_units: 128
+  dropout_rate: 0.5
+  output_activation: "softmax"
+
+training:
+  learning_rate: 0.001
+  loss: "sparse_categorical_crossentropy"
+  metrics: ["accuracy"]
+  epochs: 10
+  batch_size: 32
+
+evaluation:
+  test_split: 0.2
