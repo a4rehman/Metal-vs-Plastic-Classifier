@@ -1,5 +1,5 @@
-tensorflow>=2.10.0
-streamlit>=1.20.0
+tensorflow-cpu
+streamlit
 numpy
 pandas
 matplotlib
