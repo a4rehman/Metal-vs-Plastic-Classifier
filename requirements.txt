@@ -1,8 +1,5 @@
 streamlit
-tensorflow-cpu
+tensorflow-cpu<2.16
 numpy<2.0.0
-protobuf==3.20.3
 pillow
 pyyaml
-requests
-streamlit-lottie

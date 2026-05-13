@@ -4,8 +4,6 @@ from PIL import Image
 import numpy as np
 import yaml
 import os
-import requests
-from streamlit_lottie import st_lottie
 import time
 
 # --- Page Config ---
@@ -107,10 +105,6 @@ def preprocess_image(image, target_size):
 
 # --- Sidebar Content ---
 with st.sidebar:
-    lottie_recycle = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_ndm49v.json")
-    if lottie_recycle:
-        st_lottie(lottie_recycle, height=150, key="recycle_anim")
-    
     st.title("Project Info")
     st.markdown("""
     **EcoDetect** is an AI-powered tool designed to distinguish between metal and plastic waste.
@@ -162,7 +156,6 @@ with col2:
                 prediction = model.predict(processed_img)
                 
                 # Assuming 2 classes: Metal, Plastic
-                # Replace with actual class names from training if available
                 classes = ["Metal", "Plastic"]
                 pred_idx = np.argmax(prediction[0])
                 confidence = float(np.max(prediction[0]))
@@ -187,14 +180,8 @@ with col2:
                     st.info("💡 **Tip:** Plastic types vary. Check the recycling symbol for specific disposal rules.")
         else:
             st.warning("⚠️ **Model not found.** Please run the training pipeline first to generate `models/garbage_classifier.h5`.")
-            lottie_loading = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_uzfjeh9m.json")
-            if lottie_loading:
-                st_lottie(lottie_loading, height=200)
     else:
         st.info("Please upload an image to start the analysis.")
-        lottie_home = load_lottieurl("https://assets3.lottiefiles.com/packages/lf20_qcizp3.json")
-        if lottie_home:
-            st_lottie(lottie_home, height=300)
 
 # --- Footer ---
 st.divider()
